@@ -3,14 +3,179 @@
   "metadata": {},
   "schema": {
     "name": "bb-component-SuperFieldView",
-    "friendlyName": "bb-component-SuperFieldView",
+    "friendlyName": "Super Field View",
     "description": "A component to show the details of a record",
+    "styles" : [ "padding", "size", "background", "border" ],
+    "hasChildren" : true,
+    "showEmpty": false,
     "icon": "Text",
     "settings": [
       {
+        "type": "dataProvider",
+        "key": "dataProvider",
+        "label": "Data Provider"
+      },
+      {
+        "type": "fieldConfiguration",
+        "key" : "fieldList",
+        "label" : "Select Fields"
+      },
+      {
         "type": "text",
-        "key": "text",
-        "label": "Text"
+        "key": "heading",
+        "label": "Heading",
+        "defaultValue" : "Item Details"
+      },
+      {
+        "type": "text",
+        "key": "labelWidth",
+        "label": "Labels Width",
+        "defaultValue" : "120px"
+      },
+      {
+        "type" : "number",
+        "key" : "columns",
+        "label" : "Columns",
+        "min" : 1,
+        "max" : 8,
+        "defaultValue": 1
+      },
+      {
+        "type" : "boolean",
+        "key" : "hideHeading",
+        "label" : "Hide Heading",
+        "defaultValue" : false
+      },
+      {
+        "type" : "boolean",
+        "key" : "labelsAbove",
+        "label" : "Labels Above",
+        "defaultValue" : false
+      },
+      {
+        "type" : "boolean",
+        "key" : "collapsible",
+        "label" : "Collapsible",
+        "defaultValue" : false
+      },
+      {
+        "type" : "boolean",
+        "key" : "collapsed",
+        "label" : "Collapsed",
+        "defaultValue" : false
+      },
+      {
+        "section": true,
+        "name": "Heading Settings",
+        "settings" : [
+          {
+            "type" : "select",
+            "key" : "headingSize",
+            "label" : "Font Size",
+            "options": [
+              { "label" : "Extra Small" , "value" : "XS" },
+              { "label" : "Small" , "value" : "S" },
+              { "label" : "Medium" , "value" : "M" },
+              { "label" : "Large" , "value" : "L" },
+              { "label" : "Extra Large" , "value" : "XL" }
+            ],
+            "defaultValue": "M"
+          },
+          {
+            "type" : "select",
+            "key" : "headingWeight",
+            "label" : "Font Weight",
+            "options": [
+              { "label" : "Light" , "value" : "light" },
+              { "label" : "Normal" , "value" : "normal" },
+              { "label" : "Bold" , "value" : "bold" }
+            ]
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "Labels Settings",
+        "settings" : [
+          {
+            "type" : "select",
+            "key" : "labelSize",
+            "label" : "Font Size",
+            "options": [
+              { "label" : "Small" , "value" : "XXXS" },
+              { "label" : "Medium" , "value" : "XXS" },
+              { "label" : "Large" , "value" : "XS" }
+            ],
+            "defaultValue": "XXS"
+          },
+          {
+            "type" : "select",
+            "key" : "labelWeight",
+            "label" : "Font Weight",
+            "options": [
+              { "label" : "Light" , "value" : "light" },
+              { "label" : "Normal" , "value" : "normal" },
+              { "label" : "Bold" , "value" : "bold" }
+            ]
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "Values Settings",
+        "settings" : [
+          {
+            "type" : "select",
+            "key" : "valueSize",
+            "label" : "Font Size",
+            "options": [
+              { "label" : "Small" , "value" : "S" },
+              { "label" : "Medium" , "value" : "M" },
+              { "label" : "Large" , "value" : "L" }
+            ],
+            "defaultValue" : "M"
+          },
+          {
+            "type" : "select",
+            "key" : "valueWeight",
+            "label" : "Font Weight",
+            "options": [
+              { "label" : "Light" , "value" : "light" },
+              { "label" : "Normal" , "value" : "normal" },
+              { "label" : "Bold" , "value" : "bold" }
+            ]
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "Spacing Settings",
+        "settings" : [
+          {
+            "type" : "select",
+            "key" : "rowGap",
+            "label" : "Row Gap",
+            "options": [
+              { "label" : "Small" , "value" : "0.5rem" },
+              { "label" : "Medium" , "value" : "0.85rem" },
+              { "label" : "Large" , "value" : "1rem" },
+              { "label" : "Extra Large" , "value" : "1.7rem" }
+            ],
+            "defaultValue" : "0.85rem"
+          },
+          {
+            "type" : "select",
+            "key" : "columnGap",
+            "label" : "Column Gap",
+            "options": [
+              { "label" : "Small" , "value" : "0.5rem" },
+              { "label" : "Medium" , "value" : "0.85rem" },
+              { "label" : "Large" , "value" : "1rem" },
+              { "label" : "Extra Large" , "value" : "1.7rem" }
+            ],
+            "defaultValue" : "0.85rem"            
+          }
+        ]
       }
     ]
   }
