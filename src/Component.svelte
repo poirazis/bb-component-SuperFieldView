@@ -35,9 +35,13 @@
 
 <div use:styleable={$component.styles}>
   {#if !hideHeading}
-    <div class="super-field-view-heading spectrum-Heading spectrum-Heading--size{headingSize}"> {heading} </div>
+    <div 
+      class="super-field-view-heading spectrum-Heading spectrum-Heading--size{headingSize}"  
+      style:--super-field-view-heading-color={headingColor} > {heading} </div>
   {/if}
   <div class="superFieldView" 
+    style:--super-field-view-label-color={labelColor}
+
     style:--super-field-view-row-gap={rowGap}
     style:--super-field-view-column-gap={columnGap}
     style:--super-field-view-columns={columns}>
@@ -60,7 +64,7 @@
           </div>
 
           <div class="superFieldViewItemValue spectrum-Body spectrum-Body--size{valueSize}">
-            {row[field.name]} 
+            { row[field.name] || "-" } 
           </div>
 
       </div>
@@ -73,8 +77,8 @@
 <style>
 
   .super-field-view-heading {
-    margin-bottom: 1rem;
-
+    color: var(--super-field-view-heading-color);
+    margin-bottom: 1.25rem;
   }
 
   .superFieldView {
@@ -95,6 +99,7 @@
 
   .superFieldViewItemLabel {
     min-width: var(--super-field-view-label-width);
+    color: var(--super-field-view-label-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,5 +112,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
   }
 </style>

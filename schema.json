@@ -5,9 +5,10 @@
     "name": "bb-component-SuperFieldView",
     "friendlyName": "Super Field View",
     "description": "A component to show the details of a record",
+    "info": "You can also add components to customize the view",
     "styles" : [ "padding", "size", "background", "border" ],
     "hasChildren" : true,
-    "showEmpty": false,
+    "showEmptyState": false, 
     "icon": "Text",
     "settings": [
       {
@@ -90,6 +91,12 @@
               { "label" : "Normal" , "value" : "normal" },
               { "label" : "Bold" , "value" : "bold" }
             ]
+          },
+          {
+            "type" : "color",
+            "key" : "headingColor",
+            "label" : "Font Color",
+            "defaultValue" : "var(--spectrum-global-color-gray-700)"
           }
         ]
       },
@@ -117,6 +124,12 @@
               { "label" : "Normal" , "value" : "normal" },
               { "label" : "Bold" , "value" : "bold" }
             ]
+          },
+          {
+            "type" : "color",
+            "key" : "labelColor",
+            "label" : "Font Color",
+            "defaultValue" : "var(--spectrum-global-color-gray-700)"
           }
         ]
       },
