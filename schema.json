@@ -14,12 +14,14 @@
       {
         "type": "dataProvider",
         "key": "dataProvider",
-        "label": "Data Provider"
+        "label": "Data Provider",
+        "required" : true
       },
       {
         "type": "fieldConfiguration",
         "key" : "fieldList",
-        "label" : "Select Fields"
+        "label" : "Select Fields",
+        "required" : true
       },
       {
         "type": "text",
@@ -43,20 +45,21 @@
       },
       {
         "type" : "boolean",
+        "key" : "collapsible",
+        "label" : "Collapsible",
+        "defaultValue" : false
+      },
+      {
+        "type" : "boolean",
         "key" : "hideHeading",
         "label" : "Hide Heading",
-        "defaultValue" : false
+        "defaultValue" : false,
+        "dependsOn" : { "setting" : "collapsible", "value" : false }
       },
       {
         "type" : "boolean",
         "key" : "labelsAbove",
         "label" : "Labels Above",
-        "defaultValue" : false
-      },
-      {
-        "type" : "boolean",
-        "key" : "collapsible",
-        "label" : "Collapsible",
         "defaultValue" : false
       },
       {
@@ -80,7 +83,7 @@
               { "label" : "Large" , "value" : "L" },
               { "label" : "Extra Large" , "value" : "XL" }
             ],
-            "defaultValue": "M"
+            "defaultValue": "XS"
           },
           {
             "type" : "select",
@@ -88,9 +91,9 @@
             "label" : "Font Weight",
             "options": [
               { "label" : "Light" , "value" : "light" },
-              { "label" : "Normal" , "value" : "normal" },
-              { "label" : "Bold" , "value" : "bold" }
-            ]
+              { "label" : "Normal" , "value" : "normal" }
+            ],
+            "defaultValue": "light"
           },
           {
             "type" : "color",
@@ -147,16 +150,12 @@
               { "label" : "Large" , "value" : "L" }
             ],
             "defaultValue" : "M"
-          },
+          },         
           {
-            "type" : "select",
-            "key" : "valueWeight",
-            "label" : "Font Weight",
-            "options": [
-              { "label" : "Light" , "value" : "light" },
-              { "label" : "Normal" , "value" : "normal" },
-              { "label" : "Bold" , "value" : "bold" }
-            ]
+            "type" : "color",
+            "key" : "valueColor",
+            "label" : "Font Color",
+            "defaultValue" : "var(--spectrum-global-color-gray-700)"
           }
         ]
       },

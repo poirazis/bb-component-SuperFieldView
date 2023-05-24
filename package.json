@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A component to show the details of a record",
   "license": "MIT",
+  "author": "Michael Poirazi",
   "svelte": "index.js",
   "module": "dist/plugin.min.js",
   "scripts": {
